@@ -131,13 +131,14 @@ $(".course1").click(function(){
 
 
 //Initialize Firebase
+// Cloud Firestore
 function submitForm(){
     var namevalue = document.getElementById("name").value;
     var trackvalue = document.getElementById("track").value;
     var emailvalue =  document.getElementById("email").value;
     var phonevalue =  document.getElementById("phone").value;
     const db = firestore.collection("contactData");
-    db.doc(emailvalue)
+    db.doc(phonevalue)
     .set({
     name: namevalue,
     track: trackvalue,
@@ -164,7 +165,27 @@ function deleteForm(){
     });
 }
 
+// RealTime Database
+function addContact(){
+    var namevalue = document.getElementById("name").value;
+    var trackvalue = document.getElementById("track").value;
+    var emailvalue =  document.getElementById("email").value;
+    var phonevalue =  document.getElementById("phone").value;
+database.ref('contactData/'+phonevalue).set({
+    name: namevalue,
+    track: trackvalue,
+    email: emailvalue,
+    phone: phonevalue
 
+});
+
+}
+
+
+function sendData(){
+    addContact();
+   // submitForm();
+}
 
 
 
