@@ -78,7 +78,7 @@
 
         <div class="form-group"> 
                 <div>
-                        <button  class="btn" onclick="submitForm()">Submit</button>
+                        <button  class="btn" onclick="sendData()">Submit</button>
                 </div>        
         </div>
         <!-- <div class="form-group"> 
@@ -86,9 +86,10 @@
                     <button  class="btn" onclick="deleteForm()">Delete</button>
             </div>        
     </div>-->
+    
         </div>
         
-
+        
 </div>
 
        
@@ -97,8 +98,8 @@
 
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
-     <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-analytics.js"></script>
-
+    
+     <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-database.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-firestore.js"></script>
 
 <script>
@@ -116,8 +117,8 @@
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
     var firestore = firebase.firestore();
+    var database = firebase.database();
 
 </script>
 
